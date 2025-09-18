@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Organização de Sistemas de Saúde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .content-card {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .quiz-option:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8">
+        <!-- Cabeçalho -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-600">Modelos de Organização de Sistemas de Saúde</h1>
+            <p class="mt-2 text-lg text-slate-600">Uma visão interativa sobre os principais sistemas de saúde do mundo.</p>
+        </header>
+
+        <!-- Navegação / Abas -->
+        <nav class="flex flex-wrap justify-center gap-2 mb-8" id="tabs">
+            <button data-tab="beveridge" class="tab-button active text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Beveridge</button>
+            <button data-tab="bismarck" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Bismarck</button>
+            <button data-tab="semashko" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Semashko</button>
+            <button data-tab="nhi" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">NHI (Canadense)</button>
+            <button data-tab="oop" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Out-of-Pocket</button>
+            <button data-tab="compare" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-green-500 text-white shadow-sm hover:bg-green-600"><i class="fas fa-balance-scale mr-2"></i>Comparar</button>
+            <button data-tab="quiz" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-amber-500 text-white shadow-sm hover:bg-amber-600"><i class="fas fa-question-circle mr-2"></i>Quiz</button>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <main id="content-area">
+            <!-- O conteúdo será injetado aqui pelo JavaScript -->
+        </main>
+
+    </div>
+
+    <script>
+        // Dados extraídos do documento PDF
+        const healthModelsData = {
+            beveridge: {
+                title: "Modelo Beveridge",
+                origin: "Originado no Reino Unido após a 2ª Guerra Mundial, idealizado por William Beveridge. O NHS (1948) é seu maior exemplo.",
+                countries: "Reino Unido, Espanha, Suécia, Dinamarca, Noruega.",
+                characteristics: [
+                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "Totalmente público, através da arrecadação de impostos gerais." },
+                    { icon: "fa-hospital", title: "Provisão de Serviços", text: "Hospitais e clínicas são, em sua maioria, públicos e geridos pelo Estado." },
+                    { icon: "fa-landmark", title: "Papel do Estado", text: "Central na organização, planejamento e financiamento do sistema." },
+                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal e gratuito no ponto de uso para toda a população." }
+                ],
+                pros: [ "Acesso universal garantido", "Menores custos administrativos (pagador único)", "Maior controle sobre os custos de medicamentos e serviços" ],
+                cons: [ "Longas filas e tempos de espera para especialidades", "Risco de subfinanciamento em crises econômicas", "Menor liberdade de escolha para o paciente" ]
+            },
+            bismarck: {
+                title: "Modelo Bismarck",
+                origin: "Criado na Alemanha em 1883 pelo Chanceler Otto von Bismarck. Foi o primeiro sistema de seguro de saúde obrigatório do mundo.",
+                countries: "Alemanha, França, Japão, Bélgica, Suíça.",
+                characteristics: [
+                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "Contribuições obrigatórias de empregadores e empregados para fundos de seguro (sickness funds)." },
+                    { icon: "fa-hospital-user", title: "Provisão de Serviços", text: "A maioria dos hospitais e profissionais são privados, mas operam sob forte regulação estatal." },
+                    { icon: "fa-gavel", title: "Papel do Estado", text: "Regulador, garantindo que as seguradoras cumpram as regras e não recusem pacientes." },
+                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal, mas geralmente com copagamentos moderados para serviços." }
+                ],
+                pros: [ "Alta qualidade e inovação devido à competição", "Menores tempos de espera", "Grande liberdade de escolha de médicos e hospitais" ],
+                cons: [ "Custos administrativos e gerais mais elevados", "Pode ser complexo e burocrático", "Dependência do emprego para a cobertura" ]
+            },
+            semashko: {
+                title: "Modelo Semashko",
+                origin: "Desenvolvido na União Soviética após a Revolução de 1917, por Nikolai Semashko. Alinhado com os princípios socialistas.",
+                countries: "Cuba, Coreia do Norte, ex-URSS.",
+                characteristics: [
+                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "100% público, proveniente do orçamento nacional do governo." },
+                    { icon: "fa-hospital", title: "Provisão de Serviços", text: "Totalmente estatal. Todos os profissionais são funcionários públicos." },
+                    { icon: "fa-landmark", title: "Papel do Estado", text: "Controle e gestão absoluta sobre todo o sistema de saúde." },
+                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal e gratuito, com forte ênfase na prevenção de doenças." }
+                ],
+                pros: [ "Cobertura universal e gratuita", "Forte foco em saúde pública e prevenção", "Alta capilaridade, chegando a áreas rurais" ],
+                cons: [ "Baixa qualidade devido à falta de investimento e tecnologia", "Profissionais desmotivados por baixos salários", "Sistema ineficiente, burocrático e centralizado" ]
+            },
+            nhi: {
+                title: "National Health Insurance (NHI)",
+                origin: "Adotado pelo Canadá na década de 1960. Combina o financiamento público (Beveridge) com a provisão privada de serviços (Bismarck).",
+                countries: "Canadá, Taiwan, Coreia do Sul.",
+                characteristics: [
+                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "Um único fundo de seguro nacional (single-payer), financiado por impostos." },
+                    { icon: "fa-hospital-user", title: "Provisão de Serviços", text: "Os hospitais e clínicas são privados, mas os custos são cobertos pelo seguro estatal." },
+                    { icon: "fa-landmark", title: "Papel do Estado", text: "Atua como regulador e financiador único do sistema." },
+                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal e sem cobrança direta ao paciente no ponto de uso." }
+                ],
+                pros: [ "Equidade no acesso, independente da renda", "Menores custos administrativos (single-payer)", "Grande poder de negociação do governo para regular preços" ],
+                cons: [ "Filas de espera para procedimentos especializados", "Dependência do orçamento público", "Menor incentivo à competição e inovação" ]
+            },
+            oop: {
+                title: "Out-of-Pocket (Pagamento Direto)",
+                origin: "Não é um sistema estruturado, mas a ausência de um. É a forma mais antiga de transação em saúde, baseada na capacidade de pagamento.",
+                countries: "Predominante em regiões rurais da África, Ásia e Américas sem cobertura formal.",
+                characteristics: [
+                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "O indivíduo paga 100% pelos serviços de saúde diretamente ao provedor." },
+                    { icon: "fa-clinic-medical", title: "Provisão de Serviços", text: "Predominantemente privada e muitas vezes informal." },
+                    { icon: "fa-landmark", title: "Papel do Estado", text: "Mínimo ou completamente inexistente na regulação ou provisão." },
+                    { icon: "fa-times-circle", title: "Acesso à Saúde", text: "Extremamente limitado à capacidade de pagamento do paciente." }
+                ],
+                pros: [ "Liberdade total de escolha para quem pode pagar", "Baixo custo para o governo" ],
+                cons: [ "Desigualdade extrema no acesso à saúde", "Alto índice de mortalidade por doenças evitáveis", "Risco de custo catastrófico e falência familiar por despesas médicas" ]
+            },
+            indicators: {
+                beveridge: { name: "Beveridge", life: 81, mortality: 3.5, gdp: 9.8, wait: 8, satisfaction: 78 },
+                bismarck:  { name: "Bismarck", life: 83, mortality: 2.8, gdp: 11.5, wait: 3, satisfaction: 85 },
+                semashko:  { name: "Semashko", life: 78, mortality: 4.2, gdp: 10.2, wait: 6, satisfaction: 70 },
+                nhi:       { name: "NHI (Canadense)", life: 82, mortality: 3.2, gdp: 10.0, wait: 7, satisfaction: 80 },
+                oop:       { name: "Out-of-Pocket", life: 66, mortality: 38.0, gdp: 3.5, wait: 1, satisfaction: 45 }
+            },
+            quiz: [
+                {
+                    q: "Qual modelo de saúde é financiado principalmente por contribuições obrigatórias de empregadores e empregados?",
+                    o: ["Beveridge", "Bismarck", "Semashko", "Out-of-Pocket"],
+                    a: "Bismarck"
+                },
+                {
+                    q: "O sistema de 'pagador único' (single-payer) com prestadores de serviço privados é a principal característica de qual modelo?",
+                    o: ["Beveridge", "Bismarck", "NHI (Canadense)", "Semashko"],
+                    a: "NHI (Canadense)"
+                },
+                {
+                    q: "Em qual modelo o Estado tem controle absoluto, sendo o financiador e o único provedor de serviços de saúde?",
+                    o: ["Semashko", "Bismarck", "Beveridge", "NHI (Canadense)"],
+                    a: "Semashko"
+                },
+                {
+                    q: "Longas filas de espera são uma desvantagem comumente associada a qual destes modelos universais?",
+                    o: ["Bismarck", "Out-of-Pocket", "Beveridge", "Todos os anteriores"],
+                    a: "Beveridge"
+                }
+            ]
+        };
+
+        const contentArea = document.getElementById('content-area');
+        const tabsContainer = document.getElementById('tabs');
+
+        // Função para renderizar o conteúdo de um modelo
+        function renderModel(modelKey) {
+            const model = healthModelsData[modelKey];
+            if (!model) return;
+
+            contentArea.innerHTML = `
+                <div class="content-card bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                    <h2 class="text-3xl font-bold text-blue-600 mb-2">${model.title}</h2>
+                    <p class="text-slate-500 mb-4 italic">${model.origin}</p>
+                    <p class="mb-6"><strong class="font-semibold text-slate-700">Países Exemplo:</strong> ${model.countries}</p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        ${model.characteristics.map(char => `
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas ${char.icon} text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">${char.title}</h4>
+                                    <p class="text-slate-600">${char.text}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-green-600">Vantagens</h3>
+                            <ul class="space-y-2">
+                                ${model.pros.map(pro => `
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span class="text-slate-700">${pro}</span></li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-red-600">Desafios</h3>
+                            <ul class="space-y-2">
+                                ${model.cons.map(con => `
+                                    <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i><span class="text-slate-700">${con}</span></li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Função para renderizar a tabela de comparação
+        function renderComparison() {
+            const indicators = healthModelsData.indicators;
+            contentArea.innerHTML = `
+                <div class="content-card bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-3xl font-bold text-green-600 mb-4 text-center">Comparativo de Indicadores</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left table-auto">
+                            <thead class="bg-slate-100">
+                                <tr>
+                                    <th class="p-3 font-semibold text-slate-700">Indicador</th>
+                                    ${Object.values(indicators).map(i => `<th class="p-3 font-semibold text-slate-700 text-center">${i.name}</th>`).join('')}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold">Expectativa de Vida (anos)</td>
+                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.life}</td>`).join('')}
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold">Mortalidade Infantil (por 1.000)</td>
+                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.mortality}</td>`).join('')}
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold">Gasto com Saúde (% do PIB)</td>
+                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.gdp}%</td>`).join('')}
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold">Espera por Especialidades (semanas)</td>
+                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.wait}</td>`).join('')}
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold">Índice de Satisfação (%)</td>
+                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.satisfaction}%</td>`).join('')}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <p class="text-xs text-slate-400 mt-4 text-center">Nota: Os dados são aproximados e baseados em médias de países-exemplo para fins ilustrativos.</p>
+                </div>
+            `;
+        }
+        
+        // Função para renderizar o quiz
+        function renderQuiz() {
+            const quizData = healthModelsData.quiz;
+            contentArea.innerHTML = `
+                 <div class="content-card bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                    <h2 class="text-3xl font-bold text-amber-600 mb-6 text-center">Teste seus Conhecimentos!</h2>
+                    <div id="quiz-container" class="space-y-8">
+                        ${quizData.map((item, index) => `
+                            <div class="quiz-item">
+                                <p class="text-lg font-semibold mb-4">${index + 1}. ${item.q}</p>
+                                <div class="grid sm:grid-cols-2 gap-3">
+                                    ${item.o.map(option => `
+                                        <button class="quiz-option w-full text-left p-3 bg-slate-100 rounded-lg hover:bg-blue-200 transition-all duration-200" data-question="${index}" data-answer="${option}">
+                                            ${option}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                                <div id="feedback-${index}" class="mt-2 text-sm font-medium"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            addQuizListeners();
+        }
+
+        function addQuizListeners() {
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    const questionIndex = option.dataset.question;
+                    const selectedAnswer = option.dataset.answer;
+                    const correctAnswer = healthModelsData.quiz[questionIndex].a;
+                    const feedbackEl = document.getElementById(`feedback-${questionIndex}`);
+                    const parentOptions = option.parentElement.children;
+
+                    for(let btn of parentOptions){
+                        btn.disabled = true; // Desabilita todas as opções após uma escolha
+                        const btnAnswer = btn.dataset.answer;
+                        if(btnAnswer === correctAnswer) {
+                             btn.classList.add('bg-green-300', 'text-green-800', 'font-bold');
+                        }
+                    }
+
+                    if (selectedAnswer === correctAnswer) {
+                        feedbackEl.innerHTML = `<span class="text-green-600">Correto!</span>`;
+                    } else {
+                        option.classList.add('bg-red-300', 'text-red-800');
+                        feedbackEl.innerHTML = `<span class="text-red-600">Incorreto. A resposta certa é ${correctAnswer}.</span>`;
+                    }
+                });
+            });
+        }
+
+        // Manipulador de eventos para as abas
+        tabsContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const tabKey = e.target.dataset.tab;
+
+                // Atualiza o botão ativo
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+
+                // Renderiza o conteúdo correspondente
+                if (tabKey === 'compare') {
+                    renderComparison();
+                } else if (tabKey === 'quiz') {
+                    renderQuiz();
+                }
+                else {
+                    renderModel(tabKey);
+                }
+            }
+        });
+
+        // Renderiza o conteúdo inicial
+        renderModel('beveridge');
+    </script>
+</body>
+</html>
