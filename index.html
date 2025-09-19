@@ -1,333 +1,445 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelos de Organização de Sistemas de Saúde</title>
+    <title>Organização do Sistema de Saúde</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
         }
-        .tab-button {
-            transition: all 0.3s ease;
+        .youtube-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
-        .tab-button.active {
-            background-color: #3b82f6;
-            color: white;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
-        .content-card {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .quiz-option:hover {
-            transform: scale(1.02);
+        .youtube-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-gray-50 text-gray-800">
 
-    <div class="container mx-auto p-4 sm:p-6 md:p-8">
-        <!-- Cabeçalho -->
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-blue-600">Modelos de Organização de Sistemas de Saúde</h1>
-            <p class="mt-2 text-lg text-slate-600">Uma visão interativa sobre os principais sistemas de saúde do mundo.</p>
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-800">Organização do Sistema de Saúde</h1>
+            <p class="text-lg text-gray-600 mt-2">Um guia para entender a estrutura e os modelos de saúde</p>
         </header>
 
-        <!-- Navegação / Abas -->
-        <nav class="flex flex-wrap justify-center gap-2 mb-8" id="tabs">
-            <button data-tab="beveridge" class="tab-button active text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Beveridge</button>
-            <button data-tab="bismarck" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Bismarck</button>
-            <button data-tab="semashko" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Semashko</button>
-            <button data-tab="nhi" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">NHI (Canadense)</button>
-            <button data-tab="oop" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-white shadow-sm hover:bg-blue-100">Out-of-Pocket</button>
-            <button data-tab="compare" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-green-500 text-white shadow-sm hover:bg-green-600"><i class="fas fa-balance-scale mr-2"></i>Comparar</button>
-            <button data-tab="quiz" class="tab-button text-sm sm:text-base font-semibold py-2 px-4 rounded-full bg-amber-500 text-white shadow-sm hover:bg-amber-600"><i class="fas fa-question-circle mr-2"></i>Quiz</button>
-        </nav>
+        <main>
+            <!-- Seção 1: Vídeos Introdutórios -->
+            <section id="videos" class="bg-white p-8 rounded-xl shadow-md mb-12">
+                <h2 class="text-2xl font-bold text-blue-700 mb-6">1. Vídeos Introdutórios</h2>
+                <p class="mb-8 text-gray-700">
+                    Inicie assistindo aos dois vídeos disponíveis abaixo que irão lhes ajudar no entendimento sobre
+                    organização e estruturação de Sistemas de Saúde.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">a) Modelos de organização de Sistemas de Saúde</h3>
+                        <div class="youtube-embed rounded-lg overflow-hidden">
+                            <iframe src="https://www.youtube.com/embed/oAs7MLhZFlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">b) Modelos de estruturação de Sistemas de Saúde</h3>
+                         <div class="youtube-embed rounded-lg overflow-hidden">
+                            <iframe src="https://www.youtube.com/embed/FOMHGmzAEjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Conteúdo Principal -->
-        <main id="content-area">
-            <!-- O conteúdo será injetado aqui pelo JavaScript -->
+            <!-- Seção 2: Materiais de Aprofundamento -->
+            <section id="artigos" class="bg-white p-8 rounded-xl shadow-md mb-12">
+                <h2 class="text-2xl font-bold text-blue-700 mb-6">2. Para Saber Mais</h2>
+                <p class="mb-8 text-gray-700">
+                    Caso queira saber mais a respeito indicamos os artigos a seguir:
+                </p>
+                <ul class="space-y-4">
+                    <li><a href="https://www.pnhp.org/single_payer_resources/health_care_systems_four_basic_models.php" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">a) Artigo do movimento “médicos por um programa de saúde nacional”, dos EUA</a></li>
+                    <li><a href="https://drive.google.com/file/d/1Ni0GAGbqWWwpfaRcMRzhtTU97k8vwxs3/view?usp=sharing" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">b) Resumo sobre modelos de organização de sistemas de saúde</a></li>
+                    <li><a href="https://drive.google.com/file/d/1JXcUPQscLHl4DxlXT6m7qZDwbl8OHkfr/view?usp=sharing" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">c) Resumo sobre modelos de estruturação de Sistemas de Saúde</a></li>
+                    <li><a href="https://drive.google.com/file/d/12oxV0X3XCsR5iRS93oheY9TCa8TmMPPm/view?usp=sharing" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">d) Artigo “O Sistema de Saúde brasileiro ante a tipologia internacional”</a></li>
+                </ul>
+            </section>
+
+            <!-- Seção 3: Atividade de Reflexão -->
+            <section id="reflexao" class="bg-white p-8 rounded-xl shadow-md mb-12">
+                <h2 class="text-2xl font-bold text-blue-700 mb-6">3. Atividade de Reflexão Crítica</h2>
+                <p class="mb-6 text-gray-700">
+                    Faça uma reflexão crítica sobre o sistema de saúde brasileiro estruturada com os tópicos listados abaixo, analisando sempre suas fraquezas e fortalezas. Para isso você pode utilizar como base o artigo repassado ou outras fontes disponíveis na rede, mas esperamos que explicite a sua visão/opinião própria a respeito do assunto.
+                </p>
+                <ol class="list-decimal list-inside space-y-2 mb-8 bg-blue-50 p-6 rounded-lg">
+                    <li>Construção histórica</li>
+                    <li>Estruturação do sistema</li>
+                    <li>Papel dos entes federativos (Governo Federal, Estados e Municípios)</li>
+                    <li>Financiamento público e privado</li>
+                    <li>Modelo de pagamento dos profissionais</li>
+                </ol>
+                <p class="mb-6 text-gray-700">
+                    Utilize o formulário disponibilizado no botão abaixo para registrar as suas reflexões. Esse exercício será utilizado na primeira atividade do próximo encontro presencial.
+                </p>
+                <div class="text-center">
+                    <a href="https://forms.gle/atkhKeWmp3eoo5Zo8" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg">
+                        Acessar Formulário de Reflexão
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Seção 4: Quiz Interativo -->
+            <section id="quiz-container" class="bg-white p-8 rounded-xl shadow-md">
+                <h2 class="text-2xl font-bold text-blue-700 mb-6 text-center">4. Teste seus Conhecimentos</h2>
+                <div id="quiz-content" class="mx-auto">
+                    <div id="question-area" class="mb-4">
+                        <p id="question-text" class="text-xl font-semibold text-center mb-2"></p>
+                        <p id="question-hint" class="text-sm text-gray-500 text-center mb-6"></p>
+                    </div>
+                    <div id="answers-buttons" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                    <div id="feedback-area" class="mt-6 text-center"></div>
+                    <div class="flex justify-between items-center mt-6">
+                        <p id="progress-text" class="text-sm text-gray-600"></p>
+                        <button id="next-button" class="bg-gray-800 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-900 transition-colors hidden">Próxima</button>
+                    </div>
+                </div>
+                 <div id="quiz-results" class="text-center hidden">
+                    <h3 class="text-3xl font-bold text-blue-800">Quiz Finalizado!</h3>
+                    <p class="text-xl mt-4">Sua pontuação final é:</p>
+                    <p id="score-text" class="text-5xl font-bold my-4 text-green-600"></p>
+                    <button id="restart-button" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg">Tentar Novamente</button>
+                </div>
+            </section>
         </main>
+        
+        <footer class="text-center mt-12 py-6 border-t">
+            <p class="text-gray-500">&copy; 2024 Organização do Sistema de Saúde. Todos os direitos reservados.</p>
+        </footer>
 
     </div>
 
     <script>
-        // Dados extraídos do documento PDF
-        const healthModelsData = {
-            beveridge: {
-                title: "Modelo Beveridge",
-                origin: "Originado no Reino Unido após a 2ª Guerra Mundial, idealizado por William Beveridge. O NHS (1948) é seu maior exemplo.",
-                countries: "Reino Unido, Espanha, Suécia, Dinamarca, Noruega.",
-                characteristics: [
-                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "Totalmente público, através da arrecadação de impostos gerais." },
-                    { icon: "fa-hospital", title: "Provisão de Serviços", text: "Hospitais e clínicas são, em sua maioria, públicos e geridos pelo Estado." },
-                    { icon: "fa-landmark", title: "Papel do Estado", text: "Central na organização, planejamento e financiamento do sistema." },
-                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal e gratuito no ponto de uso para toda a população." }
+        const quizData = [
+            {
+              question: "Qual relatório, publicado em 1920 no Reino Unido, foi um dos primeiros a propor uma abordagem estruturada para a organização dos sistemas de saúde, influenciando a criação do NHS?",
+              options: [
+                { text: "Relatório Beveridge", correct: false, rationale: "O Relatório Beveridge foi publicado em 1942 e serviu de base para a criação do NHS em 1948." },
+                { text: "Relatório Dawson", correct: true, rationale: "O Relatório Dawson, de 1920, propôs uma rede integrada de assistência médica e influenciou o desenvolvimento do NHS." },
+                { text: "Relatório Semashko", correct: false, rationale: "O modelo Semashko foi desenvolvido na União Soviética e não teve influência direta na criação do NHS britânico." },
+                { text: "Relatório Bismarck", correct: false, rationale: "O modelo Bismarck surgiu na Alemanha em 1883 e se baseia em seguros sociais, não sendo a principal influência para o NHS." }
+              ],
+              hint: "Pense no relatório que introduziu os conceitos de hierarquização e regionalização dos serviços de saúde no Reino Unido."
+            },
+            {
+              question: "Qual dos seguintes não é um princípio central do Relatório Dawson?",
+              options: [
+                  { text: "Hierarquização dos serviços de saúde", correct: false, rationale: "A organização da assistência em níveis de complexidade (primário, secundário e terciário) é um dos pilares do relatório." },
+                  { text: "Regionalização da assistência médica", correct: false, rationale: "A divisão do país em regiões de saúde para atender a população local é uma proposta central do relatório." },
+                  { text: "Financiamento baseado em seguros sociais", correct: true, rationale: "O relatório defendia o acesso equitativo e gratuito, financiado pelo Estado, e não um modelo de seguros como o de Bismarck." },
+                  { text: "Prevenção e promoção da saúde", correct: false, rationale: "O relatório dava grande ênfase à atenção primária e à medicina preventiva." }
+              ],
+              hint: "Considere o modelo de financiamento que caracteriza o sistema proposto por Bismarck, em oposição ao que foi implementado no NHS britânico."
+            },
+            {
+                question: "O Sistema Único de Saúde (SUS) no Brasil foi influenciado pelos princípios do Relatório Dawson, especialmente em relação à:",
+                options: [
+                    { text: "Centralização total da gestão e financiamento privado", correct: false, rationale: "O SUS adota a descentralização da gestão e o financiamento é majoritariamente público, contrariando a ideia de financiamento privado." },
+                    { text: "Regionalização e hierarquização dos serviços", correct: true, rationale: "A criação do SUS em 1988 seguiu os princípios de regionalização e hierarquização, dividindo os serviços em atenção primária, secundária e terciária." },
+                    { text: "Foco exclusivo em hospitais e ausência de atenção primária", correct: false, rationale: "Assim como o Relatório Dawson, o SUS valoriza a atenção primária como porta de entrada do sistema." },
+                    { text: "Acesso restrito à população de baixa renda", correct: false, rationale: "O SUS, inspirado em sistemas universais, visa garantir acesso a toda a população, não apenas à de baixa renda." }
                 ],
-                pros: [ "Acesso universal garantido", "Menores custos administrativos (pagador único)", "Maior controle sobre os custos de medicamentos e serviços" ],
-                cons: [ "Longas filas e tempos de espera para especialidades", "Risco de subfinanciamento em crises econômicas", "Menor liberdade de escolha para o paciente" ]
+                hint: "Pense em como o SUS organiza seus serviços em diferentes níveis de complexidade e distribui as responsabilidades pelo território."
             },
-            bismarck: {
-                title: "Modelo Bismarck",
-                origin: "Criado na Alemanha em 1883 pelo Chanceler Otto von Bismarck. Foi o primeiro sistema de seguro de saúde obrigatório do mundo.",
-                countries: "Alemanha, França, Japão, Bélgica, Suíça.",
-                characteristics: [
-                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "Contribuições obrigatórias de empregadores e empregados para fundos de seguro (sickness funds)." },
-                    { icon: "fa-hospital-user", title: "Provisão de Serviços", text: "A maioria dos hospitais e profissionais são privados, mas operam sob forte regulação estatal." },
-                    { icon: "fa-gavel", title: "Papel do Estado", text: "Regulador, garantindo que as seguradoras cumpram as regras e não recusem pacientes." },
-                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal, mas geralmente com copagamentos moderados para serviços." }
+            {
+                question: "Qual modelo de sistema de saúde é caracterizado pela ausência de uma organização hierarquizada e pelo acesso dependente da capacidade de pagamento, sendo os Estados Unidos um exemplo?",
+                options: [
+                    { text: "Modelo Beveridge", correct: false, rationale: "O Modelo Beveridge, adotado no Reino Unido, é universal, financiado por impostos e com serviços majoritariamente públicos." },
+                    { text: "Modelo de Segmentação e Paralelismo", correct: false, rationale: "Este modelo, comum na América Latina, possui múltiplos sistemas paralelos (público, seguros sociais, privado), mas não corresponde à descentralização total do modelo de mercado." },
+                    { text: "Modelo Hospitalocêntrico (Semashko)", correct: false, rationale: "O modelo Semashko é altamente centralizado no Estado, com foco em hospitais, o oposto do modelo liberal baseado no mercado." },
+                    { text: "Sistema de Saúde Baseado no Mercado (Modelo Liberal)", correct: true, rationale: "Este modelo, predominante nos EUA, não possui coordenação central, e o acesso depende de seguros privados ou pagamento direto, gerando desigualdade." }
                 ],
-                pros: [ "Alta qualidade e inovação devido à competição", "Menores tempos de espera", "Grande liberdade de escolha de médicos e hospitais" ],
-                cons: [ "Custos administrativos e gerais mais elevados", "Pode ser complexo e burocrático", "Dependência do emprego para a cobertura" ]
+                hint: "Este modelo prioriza a livre concorrência entre prestadores de serviços e seguradoras, sem uma estrutura pública universal."
             },
-            semashko: {
-                title: "Modelo Semashko",
-                origin: "Desenvolvido na União Soviética após a Revolução de 1917, por Nikolai Semashko. Alinhado com os princípios socialistas.",
-                countries: "Cuba, Coreia do Norte, ex-URSS.",
-                characteristics: [
-                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "100% público, proveniente do orçamento nacional do governo." },
-                    { icon: "fa-hospital", title: "Provisão de Serviços", text: "Totalmente estatal. Todos os profissionais são funcionários públicos." },
-                    { icon: "fa-landmark", title: "Papel do Estado", text: "Controle e gestão absoluta sobre todo o sistema de saúde." },
-                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal e gratuito, com forte ênfase na prevenção de doenças." }
+            {
+                question: "Qual é a principal fonte de financiamento do Modelo Beveridge?",
+                options: [
+                    { text: "Contribuições obrigatórias de empregadores e empregados", correct: false, rationale: "Este é o método de financiamento do Modelo Bismarck, não do Beveridge." },
+                    { text: "Pagamento direto dos usuários no momento do serviço (Out-of-Pocket)", correct: false, rationale: "O pagamento direto caracteriza a ausência de um sistema formal, enquanto o Modelo Beveridge busca eliminar essa barreira." },
+                    { text: "Arrecadação de impostos gerais pelo governo", correct: true, rationale: "O Modelo Beveridge é caracterizado por ter financiamento totalmente público, por meio da arrecadação de impostos gerais." },
+                    { text: "Prêmios de seguros de saúde privados", correct: false, rationale: "Seguros privados são a base do Modelo Liberal (baseado no mercado), não do Beveridge." }
                 ],
-                pros: [ "Cobertura universal e gratuita", "Forte foco em saúde pública e prevenção", "Alta capilaridade, chegando a áreas rurais" ],
-                cons: [ "Baixa qualidade devido à falta de investimento e tecnologia", "Profissionais desmotivados por baixos salários", "Sistema ineficiente, burocrático e centralizado" ]
+                hint: "Pense no sistema que inspirou o NHS no Reino Unido, onde a saúde é vista como um direito financiado por toda a sociedade."
             },
-            nhi: {
-                title: "National Health Insurance (NHI)",
-                origin: "Adotado pelo Canadá na década de 1960. Combina o financiamento público (Beveridge) com a provisão privada de serviços (Bismarck).",
-                countries: "Canadá, Taiwan, Coreia do Sul.",
-                characteristics: [
-                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "Um único fundo de seguro nacional (single-payer), financiado por impostos." },
-                    { icon: "fa-hospital-user", title: "Provisão de Serviços", text: "Os hospitais e clínicas são privados, mas os custos são cobertos pelo seguro estatal." },
-                    { icon: "fa-landmark", title: "Papel do Estado", text: "Atua como regulador e financiador único do sistema." },
-                    { icon: "fa-universal-access", title: "Acesso à Saúde", text: "Universal e sem cobrança direta ao paciente no ponto de uso." }
+            {
+                question: "O Modelo Bismarck, originado na Alemanha, tem como uma de suas principais características:",
+                options: [
+                    { text: "A maioria dos hospitais e clínicas são públicos e geridos pelo Estado.", correct: false, rationale: "Esta é uma característica do Modelo Beveridge. No Modelo Bismarck, a maioria dos provedores é privada." },
+                    { text: "Financiamento baseado em contribuições obrigatórias para fundos de seguro de saúde.", correct: true, rationale: "O sistema Bismarck é financiado por contribuições de empregadores e trabalhadores para fundos de seguro (sickness funds)." },
+                    { text: "O Estado atua como único pagador (single-payer) dos serviços de saúde.", correct: false, rationale: "O sistema de pagador único é característico do modelo NHI (Canadense), não do Bismarck, que possui múltiplos fundos de seguro." },
+                    { text: "O acesso à saúde é limitado à capacidade de pagamento do paciente.", correct: false, rationale: "Esta é a característica do modelo Out-of-Pocket. O modelo Bismarck oferece cobertura universal através de seguro obrigatório." }
                 ],
-                pros: [ "Equidade no acesso, independente da renda", "Menores custos administrativos (single-payer)", "Grande poder de negociação do governo para regular preços" ],
-                cons: [ "Filas de espera para procedimentos especializados", "Dependência do orçamento público", "Menor incentivo à competição e inovação" ]
+                hint: "Este modelo foi criado para fortalecer a lealdade da classe trabalhadora ao Estado através de um sistema de seguridade social."
             },
-            oop: {
-                title: "Out-of-Pocket (Pagamento Direto)",
-                origin: "Não é um sistema estruturado, mas a ausência de um. É a forma mais antiga de transação em saúde, baseada na capacidade de pagamento.",
-                countries: "Predominante em regiões rurais da África, Ásia e Américas sem cobertura formal.",
-                characteristics: [
-                    { icon: "fa-money-bill-wave", title: "Financiamento", text: "O indivíduo paga 100% pelos serviços de saúde diretamente ao provedor." },
-                    { icon: "fa-clinic-medical", title: "Provisão de Serviços", text: "Predominantemente privada e muitas vezes informal." },
-                    { icon: "fa-landmark", title: "Papel do Estado", text: "Mínimo ou completamente inexistente na regulação ou provisão." },
-                    { icon: "fa-times-circle", title: "Acesso à Saúde", text: "Extremamente limitado à capacidade de pagamento do paciente." }
+            {
+                question: "Qual das seguintes é uma desvantagem comum associada ao Modelo Beveridge?",
+                options: [
+                    { text: "Altos custos administrativos devido à multiplicidade de seguradoras.", correct: false, rationale: "Esta é uma desvantagem do Modelo Bismarck. O Modelo Beveridge tem custos administrativos menores por ter um único financiador." },
+                    { text: "Desigualdade extrema no acesso, baseada na capacidade de pagamento.", correct: false, rationale: "Esta é a principal desvantagem do modelo Out-of-Pocket. O Modelo Beveridge promove o acesso universal." },
+                    { text: "Longas filas e tempos de espera para procedimentos especializados.", correct: true, rationale: "Devido à alta demanda e ao financiamento público limitado, longas filas de espera são um desafio comum em sistemas baseados no Modelo Beveridge." },
+                    { text: "Dependência de empregadores para a cobertura de saúde.", correct: false, rationale: "A dependência do emprego para ter cobertura é um desafio do Modelo Bismarck." }
                 ],
-                pros: [ "Liberdade total de escolha para quem pode pagar", "Baixo custo para o governo" ],
-                cons: [ "Desigualdade extrema no acesso à saúde", "Alto índice de mortalidade por doenças evitáveis", "Risco de custo catastrófico e falência familiar por despesas médicas" ]
+                hint: "Pense no que acontece quando a demanda por serviços de saúde gratuitos é muito alta e o financiamento é limitado pelo orçamento do governo."
             },
-            indicators: {
-                beveridge: { name: "Beveridge", life: 81, mortality: 3.5, gdp: 9.8, wait: 8, satisfaction: 78 },
-                bismarck:  { name: "Bismarck", life: 83, mortality: 2.8, gdp: 11.5, wait: 3, satisfaction: 85 },
-                semashko:  { name: "Semashko", life: 78, mortality: 4.2, gdp: 10.2, wait: 6, satisfaction: 70 },
-                nhi:       { name: "NHI (Canadense)", life: 82, mortality: 3.2, gdp: 10.0, wait: 7, satisfaction: 80 },
-                oop:       { name: "Out-of-Pocket", life: 66, mortality: 38.0, gdp: 3.5, wait: 1, satisfaction: 45 }
+            {
+                question: "O Modelo Semashko, desenvolvido na União Soviética, priorizava:",
+                options: [
+                    { text: "A competição entre hospitais privados para incentivar a inovação.", correct: false, rationale: "O modelo Semashko era totalmente estatal, sem espaço para competição privada. A competição é uma característica de modelos como o Bismarck." },
+                    { text: "A liberdade de escolha de médicos e hospitais pelos pacientes.", correct: false, rationale: "A liberdade de escolha é valorizada no Modelo Bismarck, enquanto o modelo Semashko era altamente centralizado e com pouca autonomia local." },
+                    { text: "A medicina preventiva, o controle de doenças infecciosas e a saúde do trabalhador.", correct: true, rationale: "O modelo Semashko tinha forte ênfase na medicina preventiva e no controle de doenças infecciosas, alinhado aos princípios socialistas de bem-estar dos trabalhadores." },
+                    { text: "O financiamento através de seguros de saúde gerenciados por sindicatos.", correct: false, rationale: "O financiamento era 100% público, proveniente do orçamento do Estado, e não de seguros sindicais." }
+                ],
+                hint: "Este modelo foi criado após a Revolução Russa de 1917, com o objetivo de alinhar a saúde aos princípios do socialismo."
             },
-            quiz: [
-                {
-                    q: "Qual modelo de saúde é financiado principalmente por contribuições obrigatórias de empregadores e empregados?",
-                    o: ["Beveridge", "Bismarck", "Semashko", "Out-of-Pocket"],
-                    a: "Bismarck"
-                },
-                {
-                    q: "O sistema de 'pagador único' (single-payer) com prestadores de serviço privados é a principal característica de qual modelo?",
-                    o: ["Beveridge", "Bismarck", "NHI (Canadense)", "Semashko"],
-                    a: "NHI (Canadense)"
-                },
-                {
-                    q: "Em qual modelo o Estado tem controle absoluto, sendo o financiador e o único provedor de serviços de saúde?",
-                    o: ["Semashko", "Bismarck", "Beveridge", "NHI (Canadense)"],
-                    a: "Semashko"
-                },
-                {
-                    q: "Longas filas de espera são uma desvantagem comumente associada a qual destes modelos universais?",
-                    o: ["Bismarck", "Out-of-Pocket", "Beveridge", "Todos os anteriores"],
-                    a: "Beveridge"
+            {
+                question: "O modelo National Health Insurance (NHI), como o do Canadá, combina características de quais outros dois modelos?",
+                options: [
+                    { text: "Semashko e Out-of-Pocket", correct: false, rationale: "O modelo NHI é universal e financiado publicamente, o oposto do modelo Out-of-Pocket, e sua provisão privada o difere do modelo Semashko, que é totalmente estatal." },
+                    { text: "Beveridge e Bismarck", correct: true, rationale: "O modelo NHI combina o financiamento público por impostos (como o Beveridge) com a prestação de serviços por entidades privadas (como no Bismarck)." },
+                    { text: "Bismarck e Out-of-Pocket", correct: false, rationale: "O modelo NHI garante cobertura universal, o que o diferencia fundamentalmente do modelo Out-of-Pocket, que se baseia na capacidade de pagamento." },
+                    { text: "Beveridge e Semashko", correct: false, rationale: "Embora ambos tenham financiamento estatal, o modelo NHI utiliza prestadores privados, enquanto o Semashko tem uma rede totalmente pública." }
+                ],
+                hint: "Pense em um sistema que tem financiamento público (como o Reino Unido) mas os hospitais e médicos são, em sua maioria, privados (como na Alemanha)."
+            },
+            {
+                question: "Qual é a principal característica de um sistema de saúde Out-of-Pocket?",
+                options: [
+                    { text: "Cobertura universal garantida pelo Estado.", correct: false, rationale: "Este modelo é definido pela ausência de cobertura universal; o acesso depende exclusivamente da capacidade de pagamento." },
+                    { text: "Financiamento através de impostos e gestão centralizada.", correct: false, rationale: "Esta é uma característica dos modelos Beveridge ou Semashko, não do Out-of-Pocket." },
+                    { text: "O indivíduo paga diretamente pelos serviços de saúde no momento do uso.", correct: true, rationale: "Neste modelo, o financiamento vem do pagamento direto do paciente ao provedor do serviço." },
+                    { text: "Sistema baseado em múltiplos fundos de seguro de saúde obrigatórios.", correct: false, rationale: "Múltiplos fundos de seguro são a base do Modelo Bismarck." }
+                ],
+                hint: "Este modelo é mais comum em países de baixa renda, onde não há um sistema de saúde estruturado."
+            },
+            {
+                question: "Uma das principais vantagens do modelo NHI (Canadense) é:",
+                options: [
+                    { text: "Incentivo à competição e inovação tecnológica rápida.", correct: false, rationale: "Como o sistema é majoritariamente público no financiamento, há menos incentivos para competição e inovação rápida em comparação com modelos de mercado." },
+                    { text: "Menores custos administrativos devido ao sistema de pagador único (single-payer).", correct: true, rationale: "Ao ter apenas um pagador (o governo), o sistema reduz a burocracia e os custos administrativos associados a múltiplas seguradoras." },
+                    { text: "Tempos de espera muito baixos para consultas com especialistas.", correct: false, rationale: "Assim como no modelo Beveridge, o financiamento limitado pode gerar filas e tempos de espera para procedimentos especializados." },
+                    { text: "Total independência do orçamento público.", correct: false, rationale: "Pelo contrário, o sistema é altamente dependente do orçamento público, tornando-se vulnerável a crises econômicas." }
+                ],
+                hint: "Considere o que acontece com a burocracia quando não há necessidade de negociação entre múltiplos planos de saúde."
+            },
+            {
+                question: "Qual modelo de estruturação de saúde é caracterizado pela existência de múltiplos sistemas paralelos, como um público para baixa renda, um de seguros sociais para trabalhadores formais e um privado?",
+                options: [
+                    { text: "Modelo Comunitário", correct: false, rationale: "O modelo comunitário é organizado de forma autônoma pela própria população, com foco em medicina tradicional, não em sistemas paralelos para diferentes classes sociais." },
+                    { text: "Modelo Hospitalocêntrico (Semashko)", correct: false, rationale: "O modelo Semashko é um sistema único e estatal para toda a população, não segmentado." },
+                    { text: "Modelo de Segmentação e Paralelismo", correct: true, rationale: "Comum em muitos países da América Latina, este modelo é definido pela segmentação do acesso, onde diferentes populações utilizam diferentes redes de serviços que operam em paralelo." },
+                    { text: "Modelo Baseado no Mercado (Liberal)", correct: false, rationale: "O modelo de mercado é descentralizado e baseado em seguros privados ou pagamento direto, sem a estrutura de múltiplos sistemas públicos ou de seguro social paralelos." }
+                ],
+                hint: "Este modelo é frequentemente criticado pela forte desigualdade no acesso e qualidade dos serviços entre diferentes segmentos da população."
+            },
+            {
+                question: "O antigo modelo soviético Semashko, apesar de garantir acesso universal, apresentava como uma de suas principais fraquezas:",
+                options: [
+                    { text: "Altos custos com copagamentos para os pacientes.", correct: false, rationale: "O acesso no modelo Semashko era totalmente gratuito, sem custos diretos para os cidadãos." },
+                    { text: "Falta de capilaridade, com serviços concentrados apenas em grandes cidades.", correct: false, rationale: "Pelo contrário, uma de suas forças era a alta capilaridade, com serviços básicos disponíveis mesmo em áreas rurais." },
+                    { text: "Ineficiência administrativa e baixa qualidade devido à centralização excessiva.", correct: true, rationale: "A centralização extrema gerava burocracia, ineficiência e, com a falta de investimentos, levava à obsolescência tecnológica e baixa qualidade dos serviços." },
+                    { text: "Investimento excessivo em especialidades médicas em detrimento da prevenção.", correct: false, rationale: "Ocorreu o oposto: a atenção excessiva à prevenção deixou os serviços de alta complexidade defasados." }
+                ],
+                hint: "Pense nos problemas que surgem quando um sistema de saúde é planejado de forma totalmente centralizada, com pouca autonomia local."
+            },
+            {
+                question: "De acordo com as tabelas comparativas, qual modelo de saúde tende a apresentar o menor tempo de espera para especialidades, para quem pode pagar?",
+                options: [
+                    { text: "Beveridge", correct: false, rationale: "O modelo Beveridge costuma ter tempos de espera de médios a altos, na ordem de 8 semanas." },
+                    { text: "Bismarck", correct: false, rationale: "O modelo Bismarck apresenta tempos de espera baixos, em torno de 3 semanas, devido à competição entre provedores." },
+                    { text: "NHI (Canadá)", correct: false, rationale: "O modelo NHI, semelhante ao Beveridge em seus desafios de acesso, apresenta tempos de espera médios a altos, em torno de 7 semanas." },
+                    { text: "Out-of-Pocket", correct: true, rationale: "Neste modelo, quem pode pagar tem acesso rápido, com tempo de espera baixo (cerca de 1 semana), pois o acesso é direto e não regulado." }
+                ],
+                hint: "Considere o modelo onde o acesso não depende de uma fila pública ou de autorização de um seguro, mas sim do pagamento direto."
+            },
+            {
+                question: "Qual modelo de saúde geralmente apresenta os maiores gastos como percentual do PIB, segundo os dados apresentados?",
+                options: [
+                    { text: "Beveridge", correct: false, rationale: "O modelo Beveridge tem um gasto em torno de 9.8% do PIB." },
+                    { text: "Bismarck", correct: true, rationale: "O modelo Bismarck apresenta o maior gasto, com cerca de 11.5% do PIB, devido aos custos elevados e à competição no setor." },
+                    { text: "Semashko", correct: false, rationale: "O modelo Semashko tem um gasto de aproximadamente 10.2% do PIB." },
+                    { text: "Out-of-Pocket", correct: false, rationale: "O modelo Out-of-Pocket tem o menor gasto governamental, com cerca de 3.5% do PIB, pois a maior parte é paga pelos indivíduos." }
+                ],
+                hint: "Pense no sistema que envolve múltiplos prestadores privados, seguradoras e alta tecnologia, o que tende a elevar os custos gerais."
+            },
+            {
+                question: "A criação do National Health Service (NHS) no Reino Unido em 1948 foi diretamente influenciada por qual documento?",
+                options: [
+                    { text: "Relatório Dawson", correct: false, rationale: "O Relatório Dawson (1920) foi uma influência teórica importante, mas a base direta para a criação do NHS foi o relatório de 1942." },
+                    { text: "Relatório Beveridge", correct: true, rationale: "Publicado em 1942, o Relatório Beveridge de William Beveridge defendeu a criação de um sistema de seguridade social abrangente, que culminou na criação do NHS em 1948." },
+                    { text: "Lei de Seguro de Saúde Alemã", correct: false, rationale: "A lei alemã de 1883 criou o modelo Bismarck, que é diferente do modelo Beveridge adotado pelo NHS." },
+                    { text: "Constituição da União Soviética", correct: false, rationale: "A constituição soviética estabeleceu as bases para o modelo Semashko, que não influenciou o sistema britânico." }
+                ],
+                hint: "Este relatório foi publicado durante a Segunda Guerra Mundial e propunha um Estado de bem-estar social."
+            },
+            {
+                question: "O papel do Estado no Modelo Bismarck é principalmente de:",
+                options: [
+                    { text: "Provedor direto de todos os serviços de saúde.", correct: false, rationale: "O Estado como provedor direto é característico dos modelos Beveridge e Semashko. No modelo Bismarck, a maioria dos provedores é privada." },
+                    { text: "Financiador único (single-payer) do sistema.", correct: false, rationale: "O financiador único é a marca do modelo NHI. O modelo Bismarck tem múltiplos financiadores (os fundos de seguro)." },
+                    { text: "Regulador, garantindo que as seguradoras cumpram as regras.", correct: true, rationale: "No Modelo Bismarck, o Estado atua como regulador, garantindo que os múltiplos fundos de seguro operem de forma justa e não recusem pacientes." },
+                    { text: "Mínimo ou inexistente.", correct: false, rationale: "Um papel mínimo do Estado é característico do modelo Out-of-Pocket. O Estado é um ator central na regulação do modelo Bismarck." }
+                ],
+                hint: "Neste modelo, o Estado não é o principal dono dos hospitais nem o único pagador, mas ele estabelece as regras do jogo para as seguradoras."
+            },
+            {
+                question: "Qual dos seguintes países é um exemplo clássico do Modelo Beveridge?",
+                options: [
+                    { text: "Alemanha", correct: false, rationale: "A Alemanha é o país de origem e principal exemplo do Modelo Bismarck." },
+                    { text: "Canadá", correct: false, rationale: "O Canadá é o principal exemplo do modelo National Health Insurance (NHI)." },
+                    { text: "Reino Unido", correct: true, rationale: "O Reino Unido, com o seu National Health Service (NHS), é o exemplo original e mais famoso do Modelo Beveridge." },
+                    { text: "Cuba", correct: false, rationale: "Cuba implementou um sistema de saúde inspirado no modelo soviético Semashko." }
+                ],
+                hint: "Pense no país que criou o NHS (National Health Service) após a Segunda Guerra Mundial."
+            },
+            {
+                question: "Uma característica do Modelo Comunitário de saúde é:",
+                options: [
+                    { text: "Forte dependência de hospitais centralizados e tecnologia de ponta.", correct: false, rationale: "O modelo comunitário tem dificuldade de acesso a tecnologias médicas e tratamentos especializados, focando mais na base." },
+                    { text: "Planejamento centralizado pelo governo, com pouca autonomia local.", correct: false, rationale: "A autonomia local e a participação da comunidade são centrais neste modelo, o oposto do planejamento centralizado." },
+                    { text: "Ênfase na medicina tradicional e uso de agentes comunitários de saúde.", correct: true, rationale: "Este modelo valoriza a medicina tradicional e preventiva e organiza os serviços a partir da própria comunidade, utilizando agentes locais." },
+                    { text: "Financiamento baseado em contribuições obrigatórias de empresas e trabalhadores.", correct: false, rationale: "Este é o modelo de financiamento do sistema Bismarck. O modelo comunitário muitas vezes depende de recursos externos para sua sustentabilidade." }
+                ],
+                hint: "Este modelo é frequentemente encontrado em áreas rurais e indígenas, onde a participação social é fundamental para a gestão da saúde."
+            },
+            {
+                question: "De acordo com os dados apresentados, qual indicador de saúde é drasticamente pior em países com modelo Out-of-Pocket em comparação com os outros modelos?",
+                options: [
+                    { text: "Gasto com Saúde (% do PIB)", correct: false, rationale: "O gasto governamental com saúde como % do PIB é o mais baixo no modelo Out-of-Pocket, não o pior indicador em termos de resultado para a população." },
+                    { text: "Tempo Médio de Espera para Especialidades", correct: false, rationale: "O tempo de espera para quem pode pagar é baixo, o que pode ser visto como um ponto positivo para uma parcela da população." },
+                    { text: "Mortalidade Infantil", correct: true, rationale: "A mortalidade infantil em sistemas Out-of-Pocket (38 por 1.000) é mais de 10 vezes maior do que nos outros modelos (que variam de 2.8 a 4.2), indicando uma falha grave no acesso a cuidados básicos." },
+                    { text: "Índice de Satisfação da População", correct: false, rationale: "Embora o índice de satisfação seja o mais baixo (45%), a mortalidade infantil reflete um impacto mais direto e grave na saúde da população." }
+                ],
+                hint: "Pense no indicador que melhor reflete a falta de acesso a cuidados essenciais para mães e crianças."
+            }
+        ];
+
+
+        const questionTextElement = document.getElementById('question-text');
+        const questionHintElement = document.getElementById('question-hint');
+        const answersButtonsElement = document.getElementById('answers-buttons');
+        const nextButton = document.getElementById('next-button');
+        const feedbackArea = document.getElementById('feedback-area');
+        const progressText = document.getElementById('progress-text');
+        const quizContent = document.getElementById('quiz-content');
+        const quizResults = document.getElementById('quiz-results');
+        const scoreText = document.getElementById('score-text');
+        const restartButton = document.getElementById('restart-button');
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            quizContent.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            nextButton.classList.add('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            resetState();
+            const questionData = quizData[currentQuestionIndex];
+            questionTextElement.innerText = questionData.question;
+            questionHintElement.innerText = `Dica: ${questionData.hint}`;
+            progressText.innerText = `Pergunta ${currentQuestionIndex + 1} de ${quizData.length}`;
+
+            questionData.options.forEach(option => {
+                const button = document.createElement('button');
+                button.innerText = option.text;
+                button.classList.add('w-full', 'p-4', 'border-2', 'rounded-lg', 'text-left', 'hover:bg-gray-100', 'transition-colors', 'duration-200');
+                if (option.correct) {
+                    button.dataset.correct = true;
                 }
-            ]
-        };
-
-        const contentArea = document.getElementById('content-area');
-        const tabsContainer = document.getElementById('tabs');
-
-        // Função para renderizar o conteúdo de um modelo
-        function renderModel(modelKey) {
-            const model = healthModelsData[modelKey];
-            if (!model) return;
-
-            contentArea.innerHTML = `
-                <div class="content-card bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
-                    <h2 class="text-3xl font-bold text-blue-600 mb-2">${model.title}</h2>
-                    <p class="text-slate-500 mb-4 italic">${model.origin}</p>
-                    <p class="mb-6"><strong class="font-semibold text-slate-700">Países Exemplo:</strong> ${model.countries}</p>
-
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        ${model.characteristics.map(char => `
-                            <div class="flex items-start space-x-4">
-                                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                    <i class="fas ${char.icon} text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800">${char.title}</h4>
-                                    <p class="text-slate-600">${char.text}</p>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-green-600">Vantagens</h3>
-                            <ul class="space-y-2">
-                                ${model.pros.map(pro => `
-                                    <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i><span class="text-slate-700">${pro}</span></li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-3 text-red-600">Desafios</h3>
-                            <ul class="space-y-2">
-                                ${model.cons.map(con => `
-                                    <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i><span class="text-slate-700">${con}</span></li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Função para renderizar a tabela de comparação
-        function renderComparison() {
-            const indicators = healthModelsData.indicators;
-            contentArea.innerHTML = `
-                <div class="content-card bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
-                    <h2 class="text-3xl font-bold text-green-600 mb-4 text-center">Comparativo de Indicadores</h2>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left table-auto">
-                            <thead class="bg-slate-100">
-                                <tr>
-                                    <th class="p-3 font-semibold text-slate-700">Indicador</th>
-                                    ${Object.values(indicators).map(i => `<th class="p-3 font-semibold text-slate-700 text-center">${i.name}</th>`).join('')}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b">
-                                    <td class="p-3 font-semibold">Expectativa de Vida (anos)</td>
-                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.life}</td>`).join('')}
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="p-3 font-semibold">Mortalidade Infantil (por 1.000)</td>
-                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.mortality}</td>`).join('')}
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="p-3 font-semibold">Gasto com Saúde (% do PIB)</td>
-                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.gdp}%</td>`).join('')}
-                                </tr>
-                                <tr class="border-b">
-                                    <td class="p-3 font-semibold">Espera por Especialidades (semanas)</td>
-                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.wait}</td>`).join('')}
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-semibold">Índice de Satisfação (%)</td>
-                                    ${Object.values(indicators).map(i => `<td class="p-3 text-center text-lg font-medium">${i.satisfaction}%</td>`).join('')}
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                     <p class="text-xs text-slate-400 mt-4 text-center">Nota: Os dados são aproximados e baseados em médias de países-exemplo para fins ilustrativos.</p>
-                </div>
-            `;
-        }
-        
-        // Função para renderizar o quiz
-        function renderQuiz() {
-            const quizData = healthModelsData.quiz;
-            contentArea.innerHTML = `
-                 <div class="content-card bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
-                    <h2 class="text-3xl font-bold text-amber-600 mb-6 text-center">Teste seus Conhecimentos!</h2>
-                    <div id="quiz-container" class="space-y-8">
-                        ${quizData.map((item, index) => `
-                            <div class="quiz-item">
-                                <p class="text-lg font-semibold mb-4">${index + 1}. ${item.q}</p>
-                                <div class="grid sm:grid-cols-2 gap-3">
-                                    ${item.o.map(option => `
-                                        <button class="quiz-option w-full text-left p-3 bg-slate-100 rounded-lg hover:bg-blue-200 transition-all duration-200" data-question="${index}" data-answer="${option}">
-                                            ${option}
-                                        </button>
-                                    `).join('')}
-                                </div>
-                                <div id="feedback-${index}" class="mt-2 text-sm font-medium"></div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-            addQuizListeners();
-        }
-
-        function addQuizListeners() {
-            const options = document.querySelectorAll('.quiz-option');
-            options.forEach(option => {
-                option.addEventListener('click', () => {
-                    const questionIndex = option.dataset.question;
-                    const selectedAnswer = option.dataset.answer;
-                    const correctAnswer = healthModelsData.quiz[questionIndex].a;
-                    const feedbackEl = document.getElementById(`feedback-${questionIndex}`);
-                    const parentOptions = option.parentElement.children;
-
-                    for(let btn of parentOptions){
-                        btn.disabled = true; // Desabilita todas as opções após uma escolha
-                        const btnAnswer = btn.dataset.answer;
-                        if(btnAnswer === correctAnswer) {
-                             btn.classList.add('bg-green-300', 'text-green-800', 'font-bold');
-                        }
-                    }
-
-                    if (selectedAnswer === correctAnswer) {
-                        feedbackEl.innerHTML = `<span class="text-green-600">Correto!</span>`;
-                    } else {
-                        option.classList.add('bg-red-300', 'text-red-800');
-                        feedbackEl.innerHTML = `<span class="text-red-600">Incorreto. A resposta certa é ${correctAnswer}.</span>`;
-                    }
-                });
+                button.dataset.rationale = option.rationale;
+                button.addEventListener('click', selectAnswer);
+                answersButtonsElement.appendChild(button);
             });
         }
 
-        // Manipulador de eventos para as abas
-        tabsContainer.addEventListener('click', (e) => {
-            if (e.target.tagName === 'BUTTON') {
-                const tabKey = e.target.dataset.tab;
-
-                // Atualiza o botão ativo
-                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-                e.target.classList.add('active');
-
-                // Renderiza o conteúdo correspondente
-                if (tabKey === 'compare') {
-                    renderComparison();
-                } else if (tabKey === 'quiz') {
-                    renderQuiz();
-                }
-                else {
-                    renderModel(tabKey);
-                }
+        function resetState() {
+            nextButton.classList.add('hidden');
+            feedbackArea.innerHTML = '';
+            while (answersButtonsElement.firstChild) {
+                answersButtonsElement.removeChild(answersButtonsElement.firstChild);
             }
-        });
+        }
 
-        // Renderiza o conteúdo inicial
-        renderModel('beveridge');
+        function selectAnswer(e) {
+            const selectedButton = e.target;
+            const isCorrect = selectedButton.dataset.correct === 'true';
+            
+            if (isCorrect) {
+                score++;
+            }
+
+            Array.from(answersButtonsElement.children).forEach(button => {
+                setStatusClass(button, button.dataset.correct === 'true');
+                button.disabled = true; // Disable all buttons
+            });
+
+            feedbackArea.innerHTML = `
+                <p class="font-bold text-lg ${isCorrect ? 'text-green-600' : 'text-red-600'}">
+                    ${isCorrect ? 'Resposta Correta!' : 'Resposta Incorreta!'}
+                </p>
+                <p class="text-gray-700 mt-2">${selectedButton.dataset.rationale}</p>
+            `;
+
+            if (quizData.length > currentQuestionIndex + 1) {
+                nextButton.classList.remove('hidden');
+            } else {
+                showResults();
+            }
+        }
+
+        function setStatusClass(element, correct) {
+            clearStatusClass(element);
+            if (correct) {
+                element.classList.add('bg-green-100', 'border-green-500', 'text-green-800');
+            } else {
+                element.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
+            }
+        }
+
+        function clearStatusClass(element) {
+            element.classList.remove('bg-green-100', 'border-green-500', 'text-green-800');
+            element.classList.remove('bg-red-100', 'border-red-500', 'text-red-800');
+        }
+        
+        function handleNext() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function showResults() {
+            quizContent.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+            scoreText.innerText = `${score} / ${quizData.length}`;
+        }
+
+        nextButton.addEventListener('click', handleNext);
+        restartButton.addEventListener('click', startQuiz);
+
+        // Start the quiz on page load
+        startQuiz();
+
     </script>
 </body>
 </html>
